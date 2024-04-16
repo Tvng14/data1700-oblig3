@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>data1700 - oblig 1</title>
+    <link rel="stylesheet" href="kinobilletter.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="kinobillett.js" defer></script>
+</head>
+<body style="background-color: #5F6A6A">
+<div class="container">
+    <div class="p-3">
+        <h1>Bestilling av Kinobilletter</h1>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="row pl-3">
+                <div class="col">
+                    <label for="velgFilm">Velg film:</label>
+                    <select class="form-control" id="velgFilm" onchange="velgFilm()">
+                        <option value="" disabled selected>Velg film her</option>
+                        <option value="Madame Web">Madame Web</option>
+                        <option value="Dune: Part Two">Dune: Part Two</option>
+                        <option value="Wonka">Wonka</option>
+                        <option value="Bukkene Bruse på badeland">Bukkene Bruse på badeland</option>
+                    </select>
+                    <span id="feilFilm" style="color: red;"></span>
+                </div>
+                <div class="col">
+                    <label for="antallBilletter">Antall:</label>
+                    <br>
+                    <input type="number" class="antall-boks" id="antallBilletter" min="1" max="10">
+                    <br>
+                    <span id="feilAntall" style="color: red;"></span>
+                </div>
+            </div>
+            <div class="row pl-3">
+                <div class="col">
+                    <label for="innFornavn">Fornavn:</label>
+                    <input type="text" class="form-control" id="innFornavn">
+                    <span id="feilFornavn" style="color: red;"></span>
+                </div>
+                <div class="col">
+                    <label for="innEtternavn">Etternavn:</label>
+                    <input type="text" class="form-control" id="innEtternavn">
+                    <span id="feilEtternavn" style="color: red;"></span>
+                </div>
+            </div>
+            <div class="row pl-3">
+                <div class="col">
+                    <label for="innTlf">Telefonnr:</label>
+                    <input type="tel" class="form-control" id="innTlf">
+                    <span id="feilTlf" style="color: red;"></span>
+                </div>
+                <div class="col">
+                    <label for="innEpost">E-post:</label>
+                    <input type="text" class="form-control" id="innEpost">
+                    <span id="feilEpost" style="color: red;"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="pl-3">
+        <button class="btn" style="background-color: #738889" type="button" onclick="bestillBillett()"> Bestill billett</button>
+    </div>
+    <br>
+    <div class="pl-3">
+        <h2>Alle billetter</h2>
+    </div>
+    <p id="valgtFilm"></p>
+    <div id="visBilletter" class="pl-3"></div>
+    <div class="pl-3">
+        <button class="btn-slett btn" style="background-color: #849293" type="button" onclick="slettBilletter()">Slett alle billettene</button>
+    </div>
+</div>
+</body>
+</html>
