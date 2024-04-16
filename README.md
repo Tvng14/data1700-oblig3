@@ -16,4 +16,4 @@ Ved å trykke på "kjøp billett"-knappen vil informasjonen bruker har fylt inn 
 Input-feltene tømmes når en billett er bekreftet.
 Den vil også lagre at bruker har kjøpt billett(er) på serveren.
 Ved sletting av billetter vil siden lastes på nytt tømme serveren.
-Bootstrap-stylingen plasserer alt i midten av siden input-feltene er "ryddigere" organisert (2x3)
+Bootstrap-stylingen plasserer alt i midten av siden input-feltene er "ryddigere" organisert (2x3).
