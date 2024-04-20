@@ -1,19 +1,71 @@
 package data1700.oblig3;
 
-public class Billett {
-    public String film;
-    public String antall;
-    public String fornavn;
-    public String etternavn;
-    public String telefonnr;
-    public String epost;
+import java.util.List;
 
-    public Billett(String film, String antall, String fornavn, String etternavn, String telefonnr, String epost) {
-        this.film = film;
+public class Billett {
+    private String filmTittel;
+    private int antall;
+    private String fornavn;
+    private String etternavn;
+    private int telefonnr;
+    private String epost;
+
+    public Billett() {
+    }
+    public Billett(String film, int antall, String fornavn, String etternavn, int telefonnr, String epost){
+        this.filmTittel= film;
         this.antall = antall;
         this.fornavn = fornavn;
         this.etternavn = etternavn;
         this.telefonnr = telefonnr;
+        this.epost = epost;
+    }
+
+    public String getFilm() {
+        return filmTittel;
+    }
+
+    public void setFilm(String filmTittel) {
+        this.filmTittel = filmTittel;
+    }
+
+    public int getAntall() {
+        return antall;
+    }
+
+    public void setAntall(int antall) {
+        this.antall = antall;
+    }
+
+    public String getFornavn() {
+        return fornavn;
+    }
+
+    public void setFornavn(String fornavn) {
+        this.fornavn = fornavn;
+    }
+
+    public String getEtternavn() {
+        return etternavn;
+    }
+
+    public void setEtternavn(String etternavn) {
+        this.etternavn = etternavn;
+    }
+
+    public int getTelefonnr() {
+        return telefonnr;
+    }
+
+    public void setTelefonnr(int telefonnr) {
+        this.telefonnr = telefonnr;
+    }
+
+    public String getEpost() {
+        return epost;
+    }
+
+    public void setEpost(String epost) {
         this.epost = epost;
     }
 }
