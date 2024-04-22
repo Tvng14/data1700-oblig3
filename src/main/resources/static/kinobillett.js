@@ -22,6 +22,7 @@ function bestillBillett() {
         epost: epost
     }
 
+    // Input-validering
         if (antall.trim() === "") {
             $("#feilAntall").text("Vennligst velg antall billetter");
         } else {
@@ -55,6 +56,7 @@ function bestillBillett() {
         if (antall !== "" && fornavn.trim() !== "" && etternavn.trim() !== "" &&
         telefonnr.trim() !== "" && regexTlf.test(telefonnr) && epost.trim() !== "" && regexEpost.test(epost)) {
         alleBilletter.push(billett);
+        //tømmer input-feltene etter at en billett er ferdig registrert
         $("#antallBilletter").val("");
         $("#innFornavn").val("");
         $("#innEtternavn").val("");
@@ -83,7 +85,6 @@ function skrivUt(billetter){
 }
 function hentAlle(){
     $.get('/getBillett',function(data){
-        console.log(data)
         skrivUt(data);
     });
 };

@@ -12,8 +12,8 @@ public class KinobillettController {
     KinobillettRepository rep;
     @PostMapping("/addBillett")
     public void addbillett(Billett billett) {
-        System.out.println("Billettene er lagt til");
-        rep.lagreBillett(billett);
+            System.out.println("Billettene er lagt til");
+            rep.lagreBillett(billett);
     }
     @GetMapping ("/getBillett")
     public List<Billett> hentAlle() {

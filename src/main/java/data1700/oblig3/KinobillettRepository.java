@@ -18,12 +18,17 @@ public class KinobillettRepository {
                 innBillett.getEtternavn(), innBillett.getTelefonnr(), innBillett.getEpost());
     }
     public List<Billett> hentAlle(){
-        String sql = "SELECT * FROM Billett";
+        String sql = "SELECT * FROM Billett ORDER BY etternavn ASC";
+        // Nye billetter som legges til sorteres etter etternavn under "Alle Billetter"
         List<Billett> alleBilletter = db.query(sql,new BeanPropertyRowMapper<>(Billett.class));
         return alleBilletter;
     }
+
     public void slettBilletter(){
-        String sql = "DELETE FROM Billett";
-        db.update(sql);
+        String sqlSlettBilletter = "DELETE FROM Billett";
+        String sqlResetID = "ALTER TABLE Billett ALTER COLUMN id RESTART WITH 1";
+        // Når alle billetter slettes starter id på 1 istedenfor å telle videre fra forrige billetter som ble slettet
+        db.update(sqlSlettBilletter);
+        db.update(sqlResetID);
     }
 }
