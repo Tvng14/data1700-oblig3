@@ -23,37 +23,37 @@ function bestillBillett() {
     }
 
     // Input-validering
-        if (antall.trim() === "") {
-            $("#feilAntall").text("Vennligst velg antall billetter");
-        } else {
-            $("#feilAntall").text("");
-        }
-        if (fornavn.trim() === "") {
-            $("#feilFornavn").text("Vennligst fyll ut fornavn");
-        } else {
-            $("#feilFornavn").text("");
-        }
-        if (etternavn.trim() === "") {
-            $("#feilEtternavn").text("Vennligst fyll ut etternavn");
-        } else {
-            $("#feilEtternavn").text("");
-        }
-        if (telefonnr.trim() === "") {
-            $("#feilTlf").text("Vennligst fyll ut telefonnummer");
-        } else if (!regexTlf.test(telefonnr)) {
-            $("#feilTlf").text("Ugyldig telefonnummer");
-        } else {
-            $("#feilTlf").text("");
-        }
-        if (epost.trim() === "") {
-            $("#feilEpost").text("Vennligst fyll ut e-post");
-        } else if (!regexEpost.test(epost)) {
-            $("#feilEpost").text("Ugyldig e-post");
-        } else {
-            $("#feilEpost").text("");
-        }
+    if (antall.trim() === "") {
+        $("#feilAntall").text("Vennligst velg antall billetter");
+    } else {
+        $("#feilAntall").text("");
+    }
+    if (fornavn.trim() === "") {
+        $("#feilFornavn").text("Vennligst fyll ut fornavn");
+    } else {
+        $("#feilFornavn").text("");
+    }
+    if (etternavn.trim() === "") {
+        $("#feilEtternavn").text("Vennligst fyll ut etternavn");
+    } else {
+        $("#feilEtternavn").text("");
+    }
+    if (telefonnr.trim() === "") {
+        $("#feilTlf").text("Vennligst fyll ut telefonnummer");
+    } else if (!regexTlf.test(telefonnr)) {
+        $("#feilTlf").text("Ugyldig telefonnummer");
+    } else {
+        $("#feilTlf").text("");
+    }
+    if (epost.trim() === "") {
+        $("#feilEpost").text("Vennligst fyll ut e-post");
+    } else if (!regexEpost.test(epost)) {
+        $("#feilEpost").text("Ugyldig e-post");
+    } else {
+        $("#feilEpost").text("");
+    }
 
-        if (antall !== "" && fornavn.trim() !== "" && etternavn.trim() !== "" &&
+    if (antall !== "" && fornavn.trim() !== "" && etternavn.trim() !== "" &&
         telefonnr.trim() !== "" && regexTlf.test(telefonnr) && epost.trim() !== "" && regexEpost.test(epost)) {
         alleBilletter.push(billett);
         //tømmer input-feltene etter at en billett er ferdig registrert
@@ -64,14 +64,14 @@ function bestillBillett() {
         $("#innEpost").val("");
 
         skrivUt(alleBilletter);
-        }
+    }
 
     $.post("/addBillett", billett, function (){
         hentAlle();
     });
 }
 function skrivUt(billetter){
-        let ut = "<table class='table table-striped'>" +
+    let ut = "<table class='table table-striped'>" +
         "<tr>" +
         "<th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnr</th><th>E-post</th>" +
         "</tr>";
