@@ -15,3 +15,4 @@ Input-feltene tømmes når en billett er bekreftet.
 HTML er stylet med både Bootstrap og CSS.
 Billettene lagres på serveren under getBillett() og vises på inspect -> network -> getBillett() -> Response
 
+Lenke til min oppgavebesvarelse: https://youtu.be/dyAno3WWHPA
